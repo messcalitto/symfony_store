@@ -52,9 +52,9 @@ class OrderController extends AbstractController
   
 
     #[Route('/orders', name: 'app_orders')]
-    public function show_my_orders(OrderProductRepository $oprep)
+    public function show_my_orders(OrderProductRepository $ordeRep)
     {
-        $orders = $oprep->findBy(['user' => $this->getUser()->getId()]);
+        $orders = $ordeRep->findBy(['user' => $this->getUser()->getId()]);
         
         return $this->render('order/my_orders.html.twig', [
             'orders' => $orders

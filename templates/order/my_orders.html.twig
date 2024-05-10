@@ -22,15 +22,15 @@
             </thead>
             <tbody>
             
-            {% if orders|length %}
-            <tr id="empty_cart_row" class="hidden">
-            {% else %}
+            
+
+            {% if orders|length == 0 %}
             <tr id="empty_cart_row">
-            {% endif %}
               <td colspan="3">
                 <h5 class="text-center my-4">You don't have any orders yet</h5>
               </td>
             </tr>
+            {% endif %}
             
 
 
@@ -40,7 +40,7 @@
               <tr>
                 <th scope="row">
                   <div class="d-flex align-items-center">
-                    <img src="/uploads/{{item.image}}" class="img-fluid rounded-3"
+                    <img src="/images/{{item.image}}" class="img-fluid rounded-3"
                       style="width: 120px;" alt="">
                     <div class="flex-column ms-4">
                       <p class="mb-2">{{item.title}}</p>

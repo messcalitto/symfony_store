@@ -34,7 +34,7 @@ class OrderProductCrudController extends AbstractCrudController
         return [
             
             IntegerField::new('order.id', 'Order Id')->hideOnForm(),
-            ImageField::new('image', 'Image')->hideOnForm(),
+            ImageField::new('image', 'Image')->setBasePath('images/')->hideOnForm(),
             TextField::new('user.name', 'User')->hideOnForm(),
             TextField::new('title'),
             IntegerField::new('quantity'),

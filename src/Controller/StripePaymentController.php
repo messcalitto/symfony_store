@@ -103,7 +103,7 @@ class StripePaymentController extends AbstractController
 
             foreach ($cart as $item) {
                 $order_product = new OrderProduct;
-                $order_product->setOrderId( $order );
+                $order_product->setOrder( $order );
                 $order_product->setUser( $item->getUser() );
                 $order_product->setTitle( $item->getProductTitle() );
                 $order_product->setProduct( $item->getProduct() );

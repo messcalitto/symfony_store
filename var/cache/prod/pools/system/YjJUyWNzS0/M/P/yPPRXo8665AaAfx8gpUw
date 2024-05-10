@@ -1,0 +1,106 @@
+<?php //8eba8c926523be3a4e8d83e52185a494
+
+return [PHP_INT_MAX, static fn () => \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            'sqlExecutor' => [
+                $o[1],
+            ],
+            'resultSetMapping' => [
+                $o[2],
+            ],
+            'parameterMappings' => [
+                [
+                    1 => [
+                        0,
+                        1,
+                    ],
+                    'dpid' => [
+                        2,
+                    ],
+                ],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\AbstractSqlExecutor' => [
+            'sqlStatements' => [
+                1 => 'SELECT p0_.id AS id_0, p0_.title AS title_1, p0_.description AS description_2, p0_.short_notes AS short_notes_3, p0_.price AS price_4, p0_.image AS image_5, p0_.user_id AS user_id_6, p0_.created_at AS created_at_7, p0_.updated_at AS updated_at_8, p0_.discount_price AS discount_price_9, p0_.quantity AS quantity_10, p0_.category_id AS category_id_11 FROM product p0_ WHERE ((p0_.title LIKE ?) OR (p0_.description LIKE ?)) AND p0_.id IN (?)',
+            ],
+        ],
+        'stdClass' => [
+            'aliasMap' => [
+                2 => [
+                    'p' => 'App\\Entity\\Product',
+                ],
+            ],
+            'fieldMappings' => [
+                2 => [
+                    'id_0' => 'id',
+                    'title_1' => 'title',
+                    'description_2' => 'description',
+                    'short_notes_3' => 'short_notes',
+                    'price_4' => 'price',
+                    'image_5' => 'image',
+                    'user_id_6' => 'user_id',
+                    'created_at_7' => 'created_at',
+                    'updated_at_8' => 'updated_at',
+                    'discount_price_9' => 'discount_price',
+                    'quantity_10' => 'quantity',
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'category_id_11' => 'integer',
+                ],
+            ],
+            'entityMappings' => [
+                2 => [
+                    'p' => null,
+                ],
+            ],
+            'metaMappings' => [
+                2 => [
+                    'category_id_11' => 'category_id',
+                ],
+            ],
+            'columnOwnerMap' => [
+                2 => [
+                    'id_0' => 'p',
+                    'title_1' => 'p',
+                    'description_2' => 'p',
+                    'short_notes_3' => 'p',
+                    'price_4' => 'p',
+                    'image_5' => 'p',
+                    'user_id_6' => 'p',
+                    'created_at_7' => 'p',
+                    'updated_at_8' => 'p',
+                    'discount_price_9' => 'p',
+                    'quantity_10' => 'p',
+                    'category_id_11' => 'p',
+                ],
+            ],
+            'declaringClasses' => [
+                2 => [
+                    'id_0' => 'App\\Entity\\Product',
+                    'title_1' => 'App\\Entity\\Product',
+                    'description_2' => 'App\\Entity\\Product',
+                    'short_notes_3' => 'App\\Entity\\Product',
+                    'price_4' => 'App\\Entity\\Product',
+                    'image_5' => 'App\\Entity\\Product',
+                    'user_id_6' => 'App\\Entity\\Product',
+                    'created_at_7' => 'App\\Entity\\Product',
+                    'updated_at_8' => 'App\\Entity\\Product',
+                    'discount_price_9' => 'App\\Entity\\Product',
+                    'quantity_10' => 'App\\Entity\\Product',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+)];
