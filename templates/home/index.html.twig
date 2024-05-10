@@ -1,0 +1,108 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+<link rel="stylesheet" href="home/css/pagination.css" >
+
+<section class="product_section layout_padding">
+    <div class="container">
+       
+
+       <style>
+    #searchBar form {
+       display:inline-flex;
+       margin:auto;
+
+    }
+    #searchBar form button {
+       background:#f7444e;
+       color:white;
+       padding:0 10px;
+       height:42px;
+       margin-left: 5px;
+       font-weight:bold;
+       border: none;
+    }
+    #searchBar {
+       margin: auto;
+       width: fit-content;
+    }   
+
+    #searchBar form input {
+      border-color:#6b7280 !important;
+      padding: .5rem .75rem !important;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+
+    
+    
+ </style>
+
+          <div id="searchBar">
+             <form action="{{url('app_home')}}" method="get">
+             <input type="text" name="search" placeholder="Search" value="{{search ?? ''}}">
+             <button type="submit" >Search </button>
+             </form>
+          </div>
+
+       <div class="row">
+      
+         
+
+       {% for product in products %}
+
+          <div class="col-sm-6 col-md-4 col-lg-4">
+             <div class="box"  style="height: 350px">
+                <div class="option_container">
+                   <div class="options">
+                      <a href="{{path('app_product_details', {'id': product.id})}}" class="option1">
+                      Product Details
+                      </a>
+                      
+                      <form action="{{ url('app_add_cart', {'id': product.id}) }}" method="post">
+                         <input type="submit" value="Buy Now" class="option2" style="border-radius: 30px;">  
+                         
+                      </form>
+
+                   </div>
+                </div>
+                <div class="img-box">
+                   <img src="images/{{product.image[0]}}" alt="">
+                </div>
+                <div class="detail-box">
+                   <h5>
+                   {{ product.title }}
+                   </h5>
+
+                   {% if  product.discountprice!=0  %}
+                   <h6>
+                      ${{ product.discountprice }}<br>
+                      <span style="text-decoration: line-through; color: red;">
+                         ${{ product.price }}
+                      </span>
+                   </h6>
+                   {% else %}
+                   <h6>
+                      ${{ product.price }}
+                   </h6>
+                   {% endif %}
+                </div>
+             </div>
+          </div>
+       
+       {% endfor %}
+
+       <span style="margin-top: 20px">
+       {# {!! $products.links('pagination::bootstrap-5') !!} #}
+       {{ knp_pagination_render(products, '@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig') }}
+       </span>
+
+       </div>
+      
+    </div>
+ </section>
+{% endblock %}
